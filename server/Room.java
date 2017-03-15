@@ -2,15 +2,15 @@ import java.util.ArrayList;
 
 public class Room {
   private String name;
-  private ArrayList<User> users;
+  private ArrayList<ClientThread> clients;
 
   public Room(String name){
     this.name = name;
-    users = new ArrayList<User>();
+    clients = new ArrayList<ClientThread>();
   }
 
-  public void connect(){
-
+  public void connect(ClientThread th){
+    clients.add(th);
   }
 
   public void leave(){
@@ -19,5 +19,12 @@ public class Room {
 
   public void close(){
 
+  }
+
+  public void messageBroadcast(String message){
+    for(ClientThread th : clients){
+      th.output.println(message);
+      th.output.flush();
+    }
   }
 }
