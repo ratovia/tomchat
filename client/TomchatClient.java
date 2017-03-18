@@ -12,7 +12,7 @@ class TomchatClient {
   public void start(){
     Socket cs = null;
     try{
-      cs = new Socket("localhotst",9999);
+      cs = new Socket("localhost",9999);
     }catch(UnknownHostException e){
       System.out.println(e);
     }catch(IOException e){
