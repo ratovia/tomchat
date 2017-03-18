@@ -23,8 +23,8 @@ public class Room {
 
   public void messageBroadcast(String message){
     for(ClientThread th : clients){
-      th.output.println(message);
-      th.output.flush();
+      th.getOutput().println(message);
+      th.getOutput().flush();
     }
   }
 }
