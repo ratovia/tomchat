@@ -30,4 +30,8 @@ public class ClientThread implements Runnable{
       room.messageBroadcast(message);
     }
   }
+
+  public PrintWriter getOutput(){
+    return output;
+  }
 }
